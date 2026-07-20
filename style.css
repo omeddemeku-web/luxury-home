@@ -168,3 +168,16 @@ max-width:350px;
 }
 
 }
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .navbar {
+    background-color: #1f1f1f;
+}
+
+.dark-mode .card {
+    background-color: #1f1f1f;
+    color: white;
+}
