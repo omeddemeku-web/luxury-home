@@ -397,3 +397,26 @@ body {
 .btn-details:hover {
     gap: 12px;
 }
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #111;
+}
+
+body.light-mode .navbar .logo,
+body.light-mode .navbar .nav-links a,
+body.light-mode .hero-content h1,
+body.light-mode .section-title h2,
+body.light-mode .property-card h3 {
+    color: #111;
+}
+
+body.light-mode .property-card {
+    background: #fff;
+    border-color: #ddd;
+}
+
+body.light-mode .search-bar-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #ddd;
+}
