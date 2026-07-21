@@ -10,8 +10,12 @@ html{
 }
 
 body{
-    background:#0f172a;
+    body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#111;
     color:#fff;
+}
 }
 
 a{
@@ -81,15 +85,21 @@ nav a:hover{
     font-weight:600;
 }
 
-.hero{
+
+
+    .hero{
     position:relative;
     min-height:100vh;
     display:flex;
     align-items:center;
     padding:0 8%;
     background:
-    linear-gradient(rgba(0,0,0,.45),rgba(
-        /* ===== Featured Section ===== */
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
 
 .featured{
     padding:100px 8%;
