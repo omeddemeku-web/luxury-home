@@ -1,39 +1,67 @@
-// Dark / Light Mode
+// ==========================
+// LUXEHOMES JavaScript
+// ==========================
 
+// Dark / Light Mode
 const themeBtn = document.getElementById("theme-btn");
 
 themeBtn.addEventListener("click", () => {
-
     document.body.classList.toggle("light-mode");
 
-    const icon = themeBtn.querySelector("i");
-
-    if(document.body.classList.contains("light-mode")){
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-        localStorage.setItem("theme","light");
-    }else{
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-        localStorage.setItem("theme","dark");
+    if (document.body.classList.contains("light-mode")) {
+        themeBtn.textContent = "☀️";
+    } else {
+        themeBtn.textContent = "🌙";
     }
-
 });
 
-// Save Theme
+// Header Shadow on Scroll
+const header = document.querySelector("header");
 
-window.onload = () => {
-
-    const savedTheme = localStorage.getItem("theme");
-
-    if(savedTheme === "light"){
-
-        document.body.classList.add("light-mode");
-
-        const icon = themeBtn.querySelector("i");
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
+        header.style.boxShadow = "0 8px 25px rgba(0,0,0,.25)";
+    } else {
+        header.style.boxShadow = "none";
     }
+});
 
-};
+// Search Button
+const searchBtn = document.querySelector(".search-box button");
+
+if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+        alert("🔍 Search feature coming soon!");
+    });
+}
+
+// Property Buttons
+const propertyButtons = document.querySelectorAll(".card a");
+
+propertyButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert("🏡 Property details will be available soon.");
+    });
+});
+
+// Smooth Fade Animation
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+});
+
+cards.forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "0.6s ease";
+    observer.observe(card);
+});
+
+console.log("LUXEHOMES Loaded Successfully!");
